@@ -8,12 +8,14 @@
 
 #import "TFTableViewController.h"
 #import "TFTableViewCell.h"
+#import "ZYDragView.h"
 
 @interface TFTableViewController ()<UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
 @property(nonatomic, strong) UITableView *tableView;
-@property(nonatomic, assign) BOOL iskeyboardShow;
-@property(nonatomic,strong) NSMutableArray *itemStrs;
+@property(nonatomic, unsafe_unretained) BOOL iskeyboardShow;
+@property(nonatomic, strong) NSMutableArray *itemStrs;
+@property(nonatomic, strong) ZYDragView *dragView;
 @end
 
 @implementation TFTableViewController
@@ -21,12 +23,17 @@
 - (void)loadView {
     [super loadView];
     [self.view addSubview:self.tableView];
+    UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
+    [window addSubview:self.dragView];
 }
 - (void)viewWillLayoutSubviews {
 
     CGRect tableViewRect = self.view.frame;
     //CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     _tableView.frame = tableViewRect;
+    CGRect dragViewRect = CGRectMake(0, 100, 120, 30);
+    _dragView.frame = dragViewRect;
+    _dragView.backgroundColor = [UIColor blueColor];
 }
 
 - (void)viewDidLoad {
@@ -112,6 +119,15 @@
     
     [_tableView registerClass:[TFTableViewCell class] forCellReuseIdentifier:@"CellId"];
     return _tableView;
+}
+- (ZYDragView *)dragView {
+    if(!_dragView) {
+        _dragView = [[ZYDragView alloc] initWithFrame:CGRectZero];
+        _dragView.tapAction = ^{
+            NSLog(@"TAP ON DragView");
+        };
+    }
+    return _dragView;
 }
 
 #pragma  mark - Private Methods

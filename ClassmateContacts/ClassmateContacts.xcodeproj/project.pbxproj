@@ -10,8 +10,9 @@
 		142099D11D5EFC4A0071089F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 142099D01D5EFC4A0071089F /* main.m */; };
 		142099D41D5EFC4A0071089F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 142099D31D5EFC4A0071089F /* AppDelegate.m */; };
 		142099DC1D5EFC4A0071089F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 142099DB1D5EFC4A0071089F /* Assets.xcassets */; };
-		142099EC1D5F4F220071089F /* TFTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 142099EB1D5F4F220071089F /* TFTableViewController.m */; };
-		142099EF1D5F5B620071089F /* TFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 142099EE1D5F5B620071089F /* TFTableViewCell.m */; };
+		14F97F601D69838B00DBFF4A /* TFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F97F5E1D69838B00DBFF4A /* TFTableViewCell.m */; };
+		14F97F611D69838B00DBFF4A /* TFTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F97F5F1D69838B00DBFF4A /* TFTableViewController.m */; };
+		14F97F641D6984A300DBFF4A /* ZYDragView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F97F631D6984A300DBFF4A /* ZYDragView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,10 +22,12 @@
 		142099D31D5EFC4A0071089F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		142099DB1D5EFC4A0071089F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		142099E01D5EFC4A0071089F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		142099EA1D5F4F220071089F /* TFTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFTableViewController.h; sourceTree = "<group>"; };
-		142099EB1D5F4F220071089F /* TFTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFTableViewController.m; sourceTree = "<group>"; };
-		142099ED1D5F5B620071089F /* TFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFTableViewCell.h; sourceTree = "<group>"; };
-		142099EE1D5F5B620071089F /* TFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFTableViewCell.m; sourceTree = "<group>"; };
+		14F97F5C1D69838B00DBFF4A /* TFTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFTableViewController.h; path = TestForFunctions/TFTableViewController.h; sourceTree = "<group>"; };
+		14F97F5D1D69838B00DBFF4A /* TFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFTableViewCell.h; path = TestForFunctions/TFTableViewCell.h; sourceTree = "<group>"; };
+		14F97F5E1D69838B00DBFF4A /* TFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFTableViewCell.m; path = TestForFunctions/TFTableViewCell.m; sourceTree = "<group>"; };
+		14F97F5F1D69838B00DBFF4A /* TFTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFTableViewController.m; path = TestForFunctions/TFTableViewController.m; sourceTree = "<group>"; };
+		14F97F621D6984A300DBFF4A /* ZYDragView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYDragView.h; path = ZYDragView/ZYDragView.h; sourceTree = "<group>"; };
+		14F97F631D6984A300DBFF4A /* ZYDragView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZYDragView.m; path = ZYDragView/ZYDragView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,7 @@
 		142099CE1D5EFC4A0071089F /* ClassmateContacts */ = {
 			isa = PBXGroup;
 			children = (
+				14F97F651D6984A800DBFF4A /* ZYDragView */,
 				142099E61D5F4DF30071089F /* TestForFunctions */,
 				142099D21D5EFC4A0071089F /* AppDelegate.h */,
 				142099D31D5EFC4A0071089F /* AppDelegate.m */,
@@ -95,8 +99,8 @@
 		142099E81D5F4E110071089F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				142099ED1D5F5B620071089F /* TFTableViewCell.h */,
-				142099EE1D5F5B620071089F /* TFTableViewCell.m */,
+				14F97F5D1D69838B00DBFF4A /* TFTableViewCell.h */,
+				14F97F5E1D69838B00DBFF4A /* TFTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -104,10 +108,19 @@
 		142099E91D5F4E1A0071089F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				142099EA1D5F4F220071089F /* TFTableViewController.h */,
-				142099EB1D5F4F220071089F /* TFTableViewController.m */,
+				14F97F5C1D69838B00DBFF4A /* TFTableViewController.h */,
+				14F97F5F1D69838B00DBFF4A /* TFTableViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		14F97F651D6984A800DBFF4A /* ZYDragView */ = {
+			isa = PBXGroup;
+			children = (
+				14F97F621D6984A300DBFF4A /* ZYDragView.h */,
+				14F97F631D6984A300DBFF4A /* ZYDragView.m */,
+			);
+			name = ZYDragView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,10 +192,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14F97F641D6984A300DBFF4A /* ZYDragView.m in Sources */,
 				142099D41D5EFC4A0071089F /* AppDelegate.m in Sources */,
-				142099EF1D5F5B620071089F /* TFTableViewCell.m in Sources */,
+				14F97F601D69838B00DBFF4A /* TFTableViewCell.m in Sources */,
 				142099D11D5EFC4A0071089F /* main.m in Sources */,
-				142099EC1D5F4F220071089F /* TFTableViewController.m in Sources */,
+				14F97F611D69838B00DBFF4A /* TFTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +326,7 @@
 				142099E51D5EFC4A0071089F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
