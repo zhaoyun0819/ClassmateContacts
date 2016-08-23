@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "TFTableViewController.h"
+#import "ZYMonitorPanel.h"
 @interface AppDelegate ()
 
 @end
@@ -23,7 +24,9 @@
     TFTableViewController* testTableView = [[TFTableViewController alloc] init];
     UINavigationController *navController=[[UINavigationController alloc] initWithRootViewController:testTableView];
     self.window.rootViewController=navController;
-    
+    ZYMonitorPanel *monitorPanel = [ZYMonitorPanel shareInstance];
+    monitorPanel.tag = 819;
+    [self.window addSubview:monitorPanel];
     return YES;
 }
 

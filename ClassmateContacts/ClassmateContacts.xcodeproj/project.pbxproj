@@ -14,7 +14,8 @@
 		14F97F611D69838B00DBFF4A /* TFTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F97F5F1D69838B00DBFF4A /* TFTableViewController.m */; };
 		14F97F641D6984A300DBFF4A /* ZYDragView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F97F631D6984A300DBFF4A /* ZYDragView.m */; };
 		14F97F6B1D69FC4B00DBFF4A /* ZYCPUMonitorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F97F6A1D69FC4B00DBFF4A /* ZYCPUMonitorModel.m */; };
-		14F97F6E1D6A023600DBFF4A /* ZYMonitorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F97F6D1D6A023600DBFF4A /* ZYMonitorManager.m */; };
+		14F97F711D6C0CFE00DBFF4A /* ZYMonitorPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F97F701D6C0CFE00DBFF4A /* ZYMonitorPanel.m */; };
+		14F97F741D6C0D2400DBFF4A /* ZYMonitorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F97F731D6C0D2400DBFF4A /* ZYMonitorManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +33,10 @@
 		14F97F631D6984A300DBFF4A /* ZYDragView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZYDragView.m; path = ZYDragView/ZYDragView.m; sourceTree = "<group>"; };
 		14F97F691D69FC4B00DBFF4A /* ZYCPUMonitorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYCPUMonitorModel.h; path = ZYMonitor/ZYCPUMonitorModel.h; sourceTree = "<group>"; };
 		14F97F6A1D69FC4B00DBFF4A /* ZYCPUMonitorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZYCPUMonitorModel.m; path = ZYMonitor/ZYCPUMonitorModel.m; sourceTree = "<group>"; };
-		14F97F6C1D6A023600DBFF4A /* ZYMonitorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYMonitorManager.h; sourceTree = "<group>"; };
-		14F97F6D1D6A023600DBFF4A /* ZYMonitorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYMonitorManager.m; sourceTree = "<group>"; };
+		14F97F6F1D6C0CFE00DBFF4A /* ZYMonitorPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYMonitorPanel.h; path = ZYMonitor/ZYMonitorPanel.h; sourceTree = "<group>"; };
+		14F97F701D6C0CFE00DBFF4A /* ZYMonitorPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZYMonitorPanel.m; path = ZYMonitor/ZYMonitorPanel.m; sourceTree = "<group>"; };
+		14F97F721D6C0D2400DBFF4A /* ZYMonitorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZYMonitorManager.h; path = ZYMonitor/ZYMonitorManager.h; sourceTree = "<group>"; };
+		14F97F731D6C0D2400DBFF4A /* ZYMonitorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZYMonitorManager.m; path = ZYMonitor/ZYMonitorManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,8 +147,8 @@
 			children = (
 				14F97F691D69FC4B00DBFF4A /* ZYCPUMonitorModel.h */,
 				14F97F6A1D69FC4B00DBFF4A /* ZYCPUMonitorModel.m */,
-				14F97F6C1D6A023600DBFF4A /* ZYMonitorManager.h */,
-				14F97F6D1D6A023600DBFF4A /* ZYMonitorManager.m */,
+				14F97F721D6C0D2400DBFF4A /* ZYMonitorManager.h */,
+				14F97F731D6C0D2400DBFF4A /* ZYMonitorManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -153,6 +156,8 @@
 		14F97F681D69F89B00DBFF4A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				14F97F6F1D6C0CFE00DBFF4A /* ZYMonitorPanel.h */,
+				14F97F701D6C0CFE00DBFF4A /* ZYMonitorPanel.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -226,13 +231,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14F97F6E1D6A023600DBFF4A /* ZYMonitorManager.m in Sources */,
 				14F97F641D6984A300DBFF4A /* ZYDragView.m in Sources */,
 				142099D41D5EFC4A0071089F /* AppDelegate.m in Sources */,
 				14F97F6B1D69FC4B00DBFF4A /* ZYCPUMonitorModel.m in Sources */,
 				14F97F601D69838B00DBFF4A /* TFTableViewCell.m in Sources */,
 				142099D11D5EFC4A0071089F /* main.m in Sources */,
+				14F97F711D6C0CFE00DBFF4A /* ZYMonitorPanel.m in Sources */,
 				14F97F611D69838B00DBFF4A /* TFTableViewController.m in Sources */,
+				14F97F741D6C0D2400DBFF4A /* ZYMonitorManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

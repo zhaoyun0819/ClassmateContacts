@@ -13,6 +13,8 @@
 
 @implementation ZYCPUMonitorModel
 
+#pragma mark Life Cycle
+
 + (instancetype)shareInstance {
     static ZYCPUMonitorModel *model;
     static dispatch_once_t onceToken;
@@ -38,6 +40,8 @@
     [self.history removeAllObjects];
     self.history = nil;
 }
+
+#pragma mark Private Methods
 
 - (void)update
 {

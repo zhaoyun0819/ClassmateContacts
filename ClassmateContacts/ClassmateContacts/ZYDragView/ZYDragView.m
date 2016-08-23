@@ -15,20 +15,24 @@
 @property(nonatomic, unsafe_unretained) BOOL isMoving;
 
 @end
+
 @implementation ZYDragView
+
+#pragma mark Life Cycle
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
 
     if (self) {
         self.isMovable = YES;
-        self.isMoving = YES;
+        self.isMoving = NO;
         UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                               action:@selector(onTap)];
         [self addGestureRecognizer:tgr];
     }
     return self;
 }
+
 #pragma mark Private Methods
 
 - (void)onTap {
@@ -43,12 +47,17 @@
     if (self.center.x >= self.superview.frame.size.width / 2) {
         [UIView animateWithDuration:0.25 animations:^{
             self.frame = CGRectMake(self.superview.frame.size.width - self.frame.size.width,
-                                    self.frame.origin.y, self.frame.size.width, self.frame.size.height);
+                                    self.center.y - self.frame.size.height / 2,
+                                    self.frame.size.width,
+                                    self.frame.size.height);
         }];
         
     } else {
         [UIView animateWithDuration:0.25 animations:^{
-            self.frame = CGRectMake(0, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
+            self.frame = CGRectMake(0,
+                                    self.center.y - self.frame.size.height / 2,
+                                    self.frame.size.width,
+                                    self.frame.size.height);
         }];
     }
 }
@@ -73,12 +82,11 @@
         CGFloat offsetX = currentPoint.x - _beginPoint.x;
         CGFloat offsetY = currentPoint.y - _beginPoint.y;
         self.center = CGPointMake(self.center.x + offsetX, self.center.y + offsetY);
-        if(self.center.y > self.superview.frame.size.height - self.frame.size.height / 2) {
-            self.center = CGPointMake(self.center.x + offsetX,
+        if(self.center.y > (self.superview.frame.size.height - self.frame.size.height / 2)) {
+            self.center = CGPointMake(self.center.x,
                                       self.superview.frame.size.height - self.frame.size.height / 2);
-        }
-        if(self.center.y < self.frame.size.height / 2) {
-            self.center = CGPointMake(self.center.x + offsetX,
+        } else if(self.center.y < self.frame.size.height / 2) {
+            self.center = CGPointMake(self.center.x,
                                       self.frame.size.height / 2);
         }
     }

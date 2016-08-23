@@ -8,32 +8,26 @@
 
 #import "TFTableViewController.h"
 #import "TFTableViewCell.h"
-#import "ZYDragView.h"
 
 @interface TFTableViewController ()<UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, unsafe_unretained) BOOL iskeyboardShow;
 @property(nonatomic, strong) NSMutableArray *itemStrs;
-@property(nonatomic, strong) ZYDragView *dragView;
 @end
 
 @implementation TFTableViewController
 
+#pragma mark - Life Cycle
+
 - (void)loadView {
     [super loadView];
     [self.view addSubview:self.tableView];
-    UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
-    [window addSubview:self.dragView];
 }
 - (void)viewWillLayoutSubviews {
 
     CGRect tableViewRect = self.view.frame;
-    //CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     _tableView.frame = tableViewRect;
-    CGRect dragViewRect = CGRectMake(0, 100, 120, 30);
-    _dragView.frame = dragViewRect;
-    _dragView.backgroundColor = [UIColor blueColor];
 }
 
 - (void)viewDidLoad {
@@ -120,15 +114,6 @@
     [_tableView registerClass:[TFTableViewCell class] forCellReuseIdentifier:@"CellId"];
     return _tableView;
 }
-- (ZYDragView *)dragView {
-    if(!_dragView) {
-        _dragView = [[ZYDragView alloc] initWithFrame:CGRectZero];
-        _dragView.tapAction = ^{
-            NSLog(@"TAP ON DragView");
-        };
-    }
-    return _dragView;
-}
 
 #pragma  mark - Private Methods
 
@@ -151,6 +136,20 @@
     [UIView beginAnimations:@"ResizeTextView" context:nil];
     [UIView setAnimationDuration:animationDuration];
     self.view.frame = CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height - keyboardRect.size.height);
+    UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
+    UIView *panel;
+    for(UIView *v in window.subviews)
+    {
+        if (v.tag == 819) {
+            panel = v;
+        }
+    }
+    
+    if (panel.frame.origin.y > window.frame.size.height - keyboardRect.size.height) {
+        panel.frame = CGRectMake(panel.frame.origin.x ,
+                                         window.frame.size.height - keyboardRect.size.height - panel.frame.size.height,
+                                         panel.frame.size.width, panel.frame.size.height);
+    }
     [UIView commitAnimations];
 }
 

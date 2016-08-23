@@ -10,4 +10,6 @@
 
 @interface ZYMonitorManager : NSObject
 
++(instancetype)shareInstance;
+
 @end

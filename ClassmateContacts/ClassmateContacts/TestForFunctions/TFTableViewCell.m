@@ -14,17 +14,14 @@
 
 @implementation TFTableViewCell
 
+#pragma mark - Life Cycle
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self loadSubViews];
     }
     return self;
-}
-
-- (void)loadSubViews {
-    [self.contentView addSubview:self.label];
-    [self.contentView addSubview:self.textField];
 }
 
 - (void)layoutSubviews {
@@ -77,6 +74,11 @@
 }
 
 # pragma mark - Private Methods
+
+- (void)loadSubViews {
+    [self.contentView addSubview:self.label];
+    [self.contentView addSubview:self.textField];
+}
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
